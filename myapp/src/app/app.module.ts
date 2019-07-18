@@ -13,8 +13,9 @@ import { UserDirective } from './users.directives';
 import { GenderComponent } from './genderComponent';
 import { ProductComponent } from './product.component';
 import { ProPipe } from './https.pipes';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { TemplateComponent } from './templateForm/template.component';
+import { ReactiveComponent } from './reactiveForm/reactiveForm.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +29,13 @@ import { TemplateComponent } from './templateForm/template.component';
     GenderComponent,
     ProductComponent,
     ProPipe,
-    TemplateComponent
+    TemplateComponent,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CourseDetail],
   bootstrap: [AppComponent]
