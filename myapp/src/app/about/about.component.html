@@ -1,0 +1,15 @@
+<p>about works!</p>
+<a routerLink="about1">About1</a>
+<ul *ngFor="let menu of menus">
+   <li>
+    <a routerLink="about2/{{menu.id}}">{{menu.name}}</a>
+   </li>
+
+</ul>
+
+
+<div class="card border-dark">
+  <div class="card-body">
+<router-outlet></router-outlet>
+  </div>
+</div>

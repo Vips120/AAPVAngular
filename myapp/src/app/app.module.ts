@@ -16,6 +16,13 @@ import { ProPipe } from './https.pipes';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { TemplateComponent } from './templateForm/template.component';
 import { ReactiveComponent } from './reactiveForm/reactiveForm.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import {RouterModule} from '@angular/router';
+import {routes} from './app.routes';
+import { About1Component } from './about1/about1.component';
+import { About2Component } from './about2/about2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +37,18 @@ import { ReactiveComponent } from './reactiveForm/reactiveForm.component';
     ProductComponent,
     ProPipe,
     TemplateComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    NavbarComponent,
+    HomeComponent,
+    AboutComponent,
+    About1Component,
+    About2Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [CourseDetail],
   bootstrap: [AppComponent]
