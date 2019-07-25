@@ -1,2 +1,17 @@
 <p>home works!</p>
-<app-gender></app-gender>
+<!-- <app-gender></app-gender> -->
+<div class="form-group">
+  <input type="search" class="form-control"  id="search"  placeholder="enter anything here">
+</div>
+
+<div class="card"  style="background-color:teal;color:white;"
+ *ngFor= "let post of allPosts">
+  <div class="card-body">
+    <blockquote class="blockquote"
+
+    >
+      <p>{{post.title}}</p>
+      <footer class="card-blockquote">{{post.body}}<cite title="Source title">{{post.id}}</cite></footer>
+    </blockquote>
+  </div>
+</div>
