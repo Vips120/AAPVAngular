@@ -1,5 +1,6 @@
 import { Component, OnInit,ElementRef } from '@angular/core';
 import {fromEvent, Observable} from 'rxjs';
+import {Router} from '@angular/router';
 import * as opt from 'rxjs/operators';
 import {PostsServices} from '../shared/services/posts.services';
 import { Iposts } from '../shared/model/posts';
@@ -10,7 +11,7 @@ import { Iposts } from '../shared/model/posts';
 })
 export class HomeComponent implements OnInit {
 public allPosts:Iposts;
-  constructor(private el: ElementRef, private postServices: PostsServices) { }
+  constructor(private el: ElementRef, private postServices: PostsServices, private router: Router) { }
 
   ngOnInit() {
    let data = this.el.nativeElement.querySelector('#search');
@@ -29,6 +30,7 @@ public allPosts:Iposts;
     .subscribe(data => {
       this.allPosts = data;
       console.log(data);
+      this.router.navigateByUrl('/about');
     })
   }
 
