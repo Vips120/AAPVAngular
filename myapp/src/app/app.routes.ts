@@ -3,6 +3,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { About1Component } from './about1/about1.component';
 import { About2Component } from './about2/about2.component';
+import { LoginformComponent } from './loginform/loginform.component';
+import { AuthGuard } from './shared/authguard/authguard';
 
 export const routes:Route[]=[
     {
@@ -11,7 +13,8 @@ export const routes:Route[]=[
     },
     {
  path:'home',
- component:HomeComponent
+ component:HomeComponent,
+ canActivate: [AuthGuard]
 },
 {
     path:'about',
@@ -25,5 +28,9 @@ export const routes:Route[]=[
        component:About2Component
    }
 ]
-}
+},
+   {
+       path:'login',
+       component:LoginformComponent
+   }
 ]

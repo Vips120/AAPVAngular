@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+                <h3 *ngIf="error" class="alert alert-danger">{{error}}</h3>
+                <form [formGroup]="Login" (ngSubmit)="LoginUser(Login.value)">
+<div class="form-group" formGroupName="UserLogin">
+
+ <input type="text" 
+ class="form-control" placeholder="enter username"
+  formControlName="UserName"
+ >
+ <div class="alert alert-danger"
+  *ngIf="Login.controls.UserLogin.controls.UserName.hasError('required')
+    && Login.controls.UserLogin.controls.UserName.touched
+  "
+ >
+  username is required*
+ </div>
+                    </div>
+                    <div class="form-group"
+                    formGroupName="UserLogin"
+                    >
+                         <input type="password" class="form-control" placeholder="enter password"
+                          formControlName="Password"
+                         >
+                         <div class="alert alert-danger"
+                         *ngIf="Login.controls.UserLogin.controls.Password.hasError('required')
+                         && Login.controls.UserLogin.controls.Password.touched
+                         "
+                         >
+         password is required*
+                         </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"
+                    [disabled]="!Login.valid"
+                    >Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
