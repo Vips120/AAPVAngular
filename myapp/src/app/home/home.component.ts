@@ -30,7 +30,7 @@ public allPosts:Iposts;
     .subscribe(data => {
       this.allPosts = data;
       console.log(data);
-      this.router.navigateByUrl('/about');
+      // this.router.navigateByUrl('/about');
     })
   }
 

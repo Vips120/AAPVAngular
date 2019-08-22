@@ -32,5 +32,9 @@ export const routes:Route[]=[
    {
        path:'login',
        component:LoginformComponent
+   },
+   {
+       path:'service',
+       loadChildren:'./service/service.module#ServiceModule'
    }
 ]
